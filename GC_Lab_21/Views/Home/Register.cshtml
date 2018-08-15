@@ -3,22 +3,11 @@
     ViewBag.Title = "Register";
 }
 
-<form action="/action_page.php">
-    First name:
-    <input type="text" name="firstname">
-    <br /><br />
-    Last name:
-    <input type="text" name="lastname">
-    <br /><br />
-    Email:
-    <input type="email" name="email">
-    <br /><br />
-    Phone:
-    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required />
-    <br /><br />
-    Password:
-    <input type="password" name="password">
-    <br/><br/>
-    <a href="/Home/ThankYou">Submit</a>
+<form action="/Home/AddUser" method="post">
+    <label class="form-group">First Name: </label> <input type="text" name="FirstName" class="form-control" pattern="^[a-zA-Z]{2,}$" required />
+    <label>Last Name: </label> <input type="text" name="LastName" class="form-control" pattern="^[a-zA-Z]{2,}$" required />
+    <label>Email: </label><input type="email" name="Email" class="form-control" patten ="^.{2,}[@@].{2,}[.][a-zA-Z]{2,3}$"required />
+    <label>Phone:</label><input type="tel" id="Phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+    <label>Password:</label><input type="Password" name="password">
+    <input type="submit" value="Sign Up!" class="btn-default" />
 </form>
-

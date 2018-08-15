@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestASPAppJuly2018.Models;
 
 namespace GC_Lab_21.Controllers
 {
@@ -30,9 +31,24 @@ namespace GC_Lab_21.Controllers
         {
             return View();
         }
-        public ActionResult ThankYou()
+        public ActionResult AddUser(UserInfo newUser)
         {
-            return View();
+
+            //ToDo: validation !!!
+            if (ModelState.IsValid)
+            {
+                //ToDo: Send the data to the DB
+
+                //confirmation, or maybe send to the Index pagen
+
+                ViewBag.ConfMessage = "Thanks " + newUser.FirstName;
+                return View("Confirm");
+            }
+            else
+            {
+                return View("Error");
+            }
+
         }
     }
 }
